@@ -54,4 +54,17 @@ function printScore() {
     console.log("Your Score: " + humanScore + "; \nComputer Score: " + computerScore)
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+    if (computerScore > humanScore) {
+        console.log("You lost!");
+    } else if (computerScore < humanScore) {
+        console.log("You win!");
+    } else {
+        console.log("Game Result: Draw.")
+    }
+}
+
+playGame();
