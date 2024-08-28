@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors (Console Game)</title>
+    <link rel="stylesheet" href="rps.css">
 </head>
 <body>
+    <div class="scorebox">
+        <div class="score">Your Score: 
+            <div class="num" class="human-score">0</div>
+        </div>
+        <div class="score" class="comp-score">Computer Score: 
+            <div class="num">0</div>
+        </div>
+    </div>
+    <!--create 3 buttons-->
+    <div class="btn-container">
+        <button class="btn" id="rock">Rock</button>
+        <button class="btn" id="paper">Paper</button>
+        <button class="btn" id="scissors">Scissors</button>
+    </div>
+    <div class="choices">
+        <p class="hum-choice"></p>
+        <p class="comp-choice"></p>
+    </div>
     <script src="rps.js"></script>
 </body>
 </html>

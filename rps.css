@@ -1,0 +1,22 @@
+.btn-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.scorebox {
+    font-family:'Courier New', Courier, monospace;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    margin: 5px;
+}
+
+.num {
+    margin-left: 2em;
+}

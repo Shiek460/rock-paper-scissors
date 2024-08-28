@@ -14,15 +14,12 @@ function getComputerChoice() {
     return compChoice;
 }
 
-function getHumanChoice() {
-    let humanChoice = prompt("Rock, Paper, Scissors. GO!").toLowerCase();
-    console.log("You chose: " + humanChoice);
-    return humanChoice;
-}
-
 function playRound(humanChoice, compChoice) {
     if (humanChoice === compChoice) {
-        console.log("Draw!");
+        let draw = document.createElement('p');
+        draw.textContent = "Draw!";
+        drawScore = document.querySelector(".choices");
+        drawScore.appendChild(draw);
     } else if (compChoice == "rock" && humanChoice == "paper") {
         console.log("You win! Paper beats Rock.");
         ++humanScore;
@@ -51,13 +48,11 @@ function playRound(humanChoice, compChoice) {
 }
 
 function printScore() {
+
     console.log("Your Score: " + humanScore + "; \nComputer Score: " + computerScore)
 }
 
 function playGame() {
-    for (let i = 0; i < 5; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
-    }
     if (computerScore > humanScore) {
         console.log("You lost!");
     } else if (computerScore < humanScore) {
@@ -67,4 +62,20 @@ function playGame() {
     }
 }
 
-playGame();
+//Add event listener to call playRound() with the playerSelection
+let buttons = document.querySelectorAll(".btn");
+let humChoice = document.querySelector("p.hum-choice");
+let compChoice = document.querySelector("p.comp-choice");
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        humanChoice = button.id;
+        playRound(humanChoice, comp = getComputerChoice());
+        humChoice.textContent = humanChoice;
+        compChoice.textContent = comp;
+
+    });
+});
+
+//Add div to display results, change console.log() to DOM Methods
+//Display running score, announce a winner once a player reaches 5 points
