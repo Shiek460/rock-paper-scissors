@@ -10,11 +10,19 @@
     flex-direction: column;
     margin: 2em;
     align-items: center;
+    gap: 5px;
 }
 
-.score {
+.human, .computer {
     display: flex;
-    margin: 5px;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.human {
+    margin-bottom: -5px;
+    display: flex;
+    gap: 16px;
 }
 
 .num {
