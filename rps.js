@@ -98,7 +98,7 @@ function playGame() {
 }
 
 function replay() {
-    let playAgain = input("Play Again? Y/N").toLowerCase();
+    let playAgain = prompt("Play Again? Y/N").toLowerCase();
     if (playAgain === "y" || playAgain === "yes") {
         location.reload();
     }
@@ -107,9 +107,13 @@ function replay() {
 function evaluateFinal() {
     if (computerScore === 5) {
         final.textContent = "You Lost! Better Luck Next Time";
+        roundResult.appendChild(final);
+        alert(final.textContent);
         replay();
     } else if (humanScore === 5) {
         final.textContent = "You Win! Way to go!";
+        roundResult.appendChild(final);
+        alert(final.textContent);
         replay();
     }
 }
